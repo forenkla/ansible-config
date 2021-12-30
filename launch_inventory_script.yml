@@ -1,0 +1,9 @@
+---
+- name: Launch dynamic inventory script for Parallels
+  hosts: MacBook-Pro
+  become: no
+  gather_facts: false
+
+  tasks:
+  - name: Copy and Execute the script 
+    script: /tmp/dyn_inventory.sh
