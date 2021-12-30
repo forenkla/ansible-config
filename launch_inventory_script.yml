@@ -5,5 +5,5 @@
   gather_facts: false
 
   tasks:
-  - name: Copy and Execute the script 
-    script: /tmp/dyn_inventory.sh
+  - name: Execute the command in remote shell; stdout goes to the specified file on the remote
+    ansible.builtin.shell: "source /tmp/dyn_inventory.sh"
