@@ -1,6 +1,6 @@
 ---
 - name: Launch dynamic inventory script for Parallels
-  hosts: "Home Inventory"
+  hosts: MacBook-Pro, ansible1
   become: no
   gather_facts: false
 
