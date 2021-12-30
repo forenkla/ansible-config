@@ -9,7 +9,8 @@
     ansible.builtin.copy:
       src: dyn_inventory.sh
       dest: /tmp/dyn_inventory.sh
+      mode: "+x"
   - name: Execute the command in remote shell; stdout goes to the specified file on the remote
     ansible.builtin.shell: 
-      cmd: "source dyn_inventory.sh > dyn_inventory2"
+      cmd: "./dyn_inventory.sh > dyn_inventory2"
       chdir: /tmp/
