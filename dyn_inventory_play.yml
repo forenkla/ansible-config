@@ -11,8 +11,7 @@
     register: prtctl_list
 
   - name: Debug
-    ansible.builtin.debug: 
-      msg: hostnames={{ prtctl_list.stdout_lines }}
+    ansible.builtin.debug: hostnames=prtctl_list.stdout_lines
   - name: Debug2
     ansible.builtin.debug: 
       msg: "{{ hostnames }}"
