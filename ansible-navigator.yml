@@ -4,7 +4,7 @@ ansible-navigator:
     config: ansible.cfg
 #     cmdline: "--forks 15"
     inventories:
-    - dyn_inventory.sh
+    - dyn_inventory_remote.sh
     - temp_inventory.ini
 #     playbook: /tmp/test_playbook.yml
 #   ansible-runner:
