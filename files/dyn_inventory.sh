@@ -1,23 +1,15 @@
 #!/bin/sh
 # /usr/bin/env bash
-# id: scripts/trivial-inventory-script.sh
 
-
-
-#HOST_LIST=$(prlctl list | /usr/bin/awk -v col=4 '{print $col}' | /usr/bin/awk 'NR>1');
-HOST_LIST="ansible12"
-IP_LIST="255.255.255.255"
 HOSTS="";
 HOST_VARS="";
 
-#echo $HOST_LIST;
+HOST_LIST=$(prlctl list | /usr/bin/awk -v col=4 '{print $col}' | /usr/bin/awk 'NR>1');
 
+IP_LIST=$(echo "$HOST_LIST" | xargs -I{} prlctl exec {} ip -4 -br addr show enp0s5 | awk '{print $3}' | cut -d / -f 1);
 
-#IP_LIST=$(echo "$HOST_LIST" | xargs -I{} prlctl exec {} ip -4 -br addr show enp0s5 | awk '{print $3}' | cut -d / -f 1);
+ALL_INFO=$(paste <(echo "$HOST_LIST") <(echo "$IP_LIST"));
 
-
-#ALL_INFO=$(paste <(echo "$HOST_LIST") <(echo "$IP_LIST"));
-ALL_INFO=$HOST_LIST $IP_LIST
 NUM_OF_HOSTS=$(echo "$HOST_LIST" | wc -l);
 n=1;
 while read -r vm; do
