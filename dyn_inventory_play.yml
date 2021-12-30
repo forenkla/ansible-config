@@ -8,8 +8,13 @@
   - name: Get running VMs hostnames
     ansible.builtin.shell:
       cmd: "/usr/local/bin/prlctl list | /usr/bin/awk -v col=4 '{print $col}' | /usr/bin/awk 'NR>1'"
-    register: hostnames
+    register: prtctl_list
 
   - name: Debug
     ansible.builtin.debug: 
-      msg: "{{ hostnames.stdout_lines }}"
+      msg: hostnames="{{ prtctl_list.stdout_lines }}"
+  - name: Debug2
+    ansible.builtin.debug: 
+      msg: "{{ hostnames }}"
+
+  
