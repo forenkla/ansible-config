@@ -1,6 +1,6 @@
 ---
 - name: Launch dynamic inventory script for Parallels
-  hosts: MacBook-Pro
+  hosts: "Home Inventory"
   become: no
   gather_facts: false
 
@@ -15,3 +15,4 @@
     delegate_to: ansible1
   - name: Copy and Execute the script 
     script: /tmp/dyn_inventory.sh
+    delegate_to: MacBook-Pro
