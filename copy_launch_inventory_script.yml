@@ -1,7 +1,7 @@
 ---
 - name: Launch dynamic inventory script for Parallels
   hosts: MacBook-Pro
-  become: yes
+  become: no
   gather_facts: false
 
   tasks:
