@@ -5,6 +5,7 @@ ansible-navigator:
 #     cmdline: "--forks 15"
     inventories:
     - dyn_inventory.sh
+    - temp_inventory.ini
 #     playbook: /tmp/test_playbook.yml
 #   ansible-runner:
 #     artifact-dir: /tmp/test1
