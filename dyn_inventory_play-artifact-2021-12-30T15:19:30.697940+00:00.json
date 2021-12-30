@@ -1,0 +1,60 @@
+{
+    "version": "1.0.0",
+    "plays": [
+        {
+            "playbook": "/home/jboivie/projects/ansible-config/dyn_inventory_play.yml",
+            "playbook_uuid": "ef9f4465-2a3b-4532-a419-dd9d564942c6",
+            "play": "Create dynamic inventory from prlctl",
+            "play_uuid": "d2b20ae0-3879-3518-1d37-00000000000a",
+            "play_pattern": "MacBook-Pro",
+            "name": "Create dynamic inventory from prlctl",
+            "pattern": "MacBook-Pro",
+            "uuid": "d2b20ae0-3879-3518-1d37-00000000000a",
+            "__play_name": "Create dynamic inventory from prlctl",
+            "tasks": [
+                {
+                    "playbook": "/home/jboivie/projects/ansible-config/dyn_inventory_play.yml",
+                    "playbook_uuid": "ef9f4465-2a3b-4532-a419-dd9d564942c6",
+                    "play": "Create dynamic inventory from prlctl",
+                    "play_uuid": "d2b20ae0-3879-3518-1d37-00000000000a",
+                    "play_pattern": "MacBook-Pro",
+                    "task": "Get running VMs hostnames",
+                    "task_uuid": "d2b20ae0-3879-3518-1d37-00000000000c",
+                    "task_action": "ansible.builtin.shell",
+                    "task_args": "",
+                    "task_path": "/home/jboivie/projects/ansible-config/dyn_inventory_play.yml:8",
+                    "host": "MacBook-Pro",
+                    "uuid": "f1b67789-4593-4477-a53a-7d70065b3c95",
+                    "__host": "MacBook-Pro",
+                    "__result": "UNREACHABLE",
+                    "__changed": false,
+                    "__duration": "0s",
+                    "__number": 0,
+                    "__task": "Get running VMs hostnames",
+                    "__task_action": "ansible.builtin.shell",
+                    "remote_addr": "MacBook-Pro",
+                    "start": "2021-12-30T15:19:30.162752",
+                    "end": "2021-12-30T15:19:30.255989",
+                    "duration": 0.093237,
+                    "res": {
+                        "unreachable": true,
+                        "msg": "Failed to connect to the host via ssh: root@192.168.1.31: Permission denied (publickey,password,keyboard-interactive).",
+                        "changed": false
+                    }
+                }
+            ]
+        }
+    ],
+    "stdout": [
+        "",
+        "PLAY [Create dynamic inventory from prlctl] ************************************",
+        "",
+        "TASK [Get running VMs hostnames] ***********************************************",
+        "\u001b[1;31mfatal: [MacBook-Pro]: UNREACHABLE! => {\"changed\": false, \"msg\": \"Failed to connect to the host via ssh: root@192.168.1.31: Permission denied (publickey,password,keyboard-interactive).\", \"unreachable\": true}\u001b[0m",
+        "",
+        "PLAY RECAP *********************************************************************",
+        "\u001b[0;31mMacBook-Pro\u001b[0m                : ok=0    changed=0    \u001b[1;31munreachable=1   \u001b[0m failed=0    skipped=0    rescued=0    ignored=0   "
+    ],
+    "status": "failed",
+    "status_color": 9
+}
