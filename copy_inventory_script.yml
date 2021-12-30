@@ -1,6 +1,6 @@
 ---
 - name: Launch dynamic inventory script for Parallels
-  hosts: localhost
+  hosts: MacBook-Pro
   become: no
   gather_facts: false
 
@@ -9,7 +9,7 @@
     ansible.builtin.copy:
       src: dyn_inventory.sh
       dest: /tmp/dyn_inventory.sh
-      owner: root
-      group: root
+      owner: jboivie
+      group: jboivie
       mode: '0644'
   
