@@ -4,13 +4,13 @@
 
 
 
-HOST_LIST=$(/usr/local/bin/prlctl list | /usr/bin/awk -v col=4 '{print $col}' | /usr/bin/awk 'NR>1');
+HOST_LIST=$(prlctl list | /usr/bin/awk -v col=4 '{print $col}' | /usr/bin/awk 'NR>1');
 HOSTS=""
 HOST_VARS=""
 
 #echo $HOST_LIST;
 
-IP_LIST=$(echo "$HOST_LIST" | /usr/bin/xargs -I{} /usr/local/bin/prlctl exec {} ip -4 -br addr show enp0s5 | awk '{print $3}' | cut -d / -f 1);
+IP_LIST=$(echo "$HOST_LIST" | xargs -I{} prlctl exec {} ip -4 -br addr show enp0s5 | awk '{print $3}' | cut -d / -f 1);
 
 
 ALL_INFO=$(paste <(echo "$HOST_LIST") <(echo "$IP_LIST"))
