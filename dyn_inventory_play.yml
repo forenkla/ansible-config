@@ -12,7 +12,7 @@
 
   - name: Debug
     ansible.builtin.debug: 
-      msg: hostnames="{{ prtctl_list.stdout_lines }}"
+      msg: hostnames={{ prtctl_list.stdout_lines }}
   - name: Debug2
     ansible.builtin.debug: 
       msg: "{{ hostnames }}"
