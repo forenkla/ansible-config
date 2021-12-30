@@ -9,4 +9,4 @@
     ansible.builtin.shell:
       cmd: "/usr/local/bin/prlctl list | /usr/bin/awk -v col=4 '{print $col}' | /usr/bin/awk 'NR>1'"
     register: hostnames
-  - debug: hostnames.stdout_lines
+  - debug: {{ hostnames.stdout_lines }}
