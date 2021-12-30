@@ -2,6 +2,8 @@
 # id: scripts/trivial-inventory-script.sh
 
 HOST_LIST=$(/usr/local/bin/prlctl list | /usr/bin/awk -v col=4 '{print $col}' | /usr/bin/awk 'NR>1')
+HOSTS=""
+HOST_VARS=""
 
 #echo $HOST_LIST;
 
