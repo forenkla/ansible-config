@@ -11,4 +11,6 @@
       dest: /tmp/dyn_inventory.sh
   - name: Execute the command in remote shell; stdout goes to the specified file on the remote
     ansible.builtin.shell: 
-      cmd: "source /tmp/dyn_inventory.sh > /tmp/dyn_inventory"
+      cmd: "source dyn_inventory.sh"
+      chdir: /tmp/
+      creates: dyn_inventory2
