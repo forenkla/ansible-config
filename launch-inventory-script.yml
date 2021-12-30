@@ -5,5 +5,13 @@
   gather_facts: false
 
   tasks:
+  - name: Copy dyn_inventory.sh to Controller
+    ansible.builtin.copy:
+      src: dyn_inventory.sh
+      dest: /tmp/dyn_inventory.sh
+      owner: root
+      group: root
+      mode: '0644'
+    delegate_to: ansible1
   - name: Copy and Execute the script 
     script: /tmp/dyn_inventory.sh
