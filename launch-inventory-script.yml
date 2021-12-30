@@ -6,4 +6,4 @@
 
   tasks:
   - name: Copy and Execute the script 
-    script: /dyn_inventory.sh
+    script: dyn_inventory.sh
