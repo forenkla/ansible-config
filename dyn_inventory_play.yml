@@ -14,4 +14,7 @@
     ansible.builtin.debug:
       msg: "{{ prtctl_vmlist.stdout_lines }}"
 
-  
+  - name: Get running VMs IP addresses
+    ansible.builtin.shell:
+      cmd: "/usr/local/bin/prlctl exec {{item}} ip -4 -br addr show enp0s5 | /usr/bin/awk '{print $3}' | cut -d / -f 1"
+    with_items: "{{ prtctl_vmlist.stdout_lines }}"
