@@ -22,4 +22,4 @@
 
   - name: Debug
     ansible.builtin.debug:
-      msg: "{{ prlctl_iplist.stdout_lines }}"
+      msg: "{{ prlctl_iplist }}"
