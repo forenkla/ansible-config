@@ -18,3 +18,8 @@
     ansible.builtin.shell:
       cmd: "/usr/local/bin/prlctl exec {{item}} ip -4 -br addr show enp0s5 | /usr/bin/awk '{print $3}' | cut -d / -f 1"
     with_items: "{{ prtctl_vmlist.stdout_lines }}"
+    register: prlctl_iplist
+
+  - name: Debug
+    ansible.builtin.debug:
+      msg: "{{ prlctl_iplist.stdout_lines }}"
