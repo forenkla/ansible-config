@@ -12,6 +12,6 @@
 
   - name: Debug
     ansible.builtin.debug:
-      msg: prtctl_vmlist.stdout_lines
+      msg: "{{ prtctl_vmlist.stdout_lines }}"
 
   
